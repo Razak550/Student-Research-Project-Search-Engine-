@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="ResearchFinder - Student Research Project Search Engine System.">
+
+    <title>ResearchFinder | Student Research Project Search Engine</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- =====================================
+         SIDEBAR
+    ====================================== -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-icon">🔎</div>
+
+            <div class="logo-text">
+
+                <h2>ResearchFinder</h2>
+
+                <p>Academic Project Search</p>
+
+            </div>
+
+        </div>
+
+        <!-- NAVIGATION -->
+
+        <nav class="sidebar-menu" aria-label="Main navigation">
+
+            <button
+                type="button"
+                class="menu-item active"
+                data-view="dashboard">
+
+                🏠 Dashboard
+
+            </button>
+
+            <button
+                type="button"
+                class="menu-item"
+                data-view="projects">
+
+                📚 Browse Projects
+
+            </button>
+
+            <button
+                type="button"
+                class="menu-item"
+                data-view="favorites">
+
+                ⭐ My Favorites
+
+            </button>
+
+            <button
+                type="button"
+                class="menu-item"
+                data-view="recent">
+
+                🕒 Recent Projects
+
+            </button>
+
+            <button
+                type="button"
+                class="menu-item"
+                data-view="manage">
+
+                ⚙️ Manage Projects
+
+            </button>
+
+        </nav>
+
+        <!-- SIDEBAR BOTTOM -->
+
+        <div class="sidebar-bottom">
+
+            <button
+                type="button"
+                id="themeToggle"
+                class="theme-toggle">
+
+                🌙 Dark Mode
+
+            </button>
+
+            <div class="student-info">
+
+                <p>Developed By</p>
+
+                <strong>
+                    Ibrahim Ugbede Abdulrazak
+                </strong>
+
+                <small>
+                    2025/HND/SWD/032
+                </small>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================
+         MAIN CONTENT
+    ====================================== -->
+
+    <main class="main-content" id="mainContent">
+
+        <!-- HEADER -->
+
+        <header class="header">
+
+            <div class="header-left">
+
+                <button
+                    type="button"
+                    class="mobile-menu-btn"
+                    id="menuToggle"
+                    aria-label="Toggle navigation"
+                    aria-controls="sidebar"
+                    aria-expanded="false">
+
+                    ☰
+
+                </button>
+
+                <div>
+
+                    <h1 id="pageTitle">
+                        Dashboard
+                    </h1>
+
+                    <p>
+                        Discover and explore academic
+                        research projects.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="header-actions">
+
+                <button
+                    type="button"
+                    class="btn btn-outline"
+                    id="browseProjectsBtn">
+
+                    🔎 Browse Projects
+
+                </button>
+
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    id="addProjectBtn">
+
+                    + Add Project
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- =====================================
+             DASHBOARD STATISTICS
+        ====================================== -->
+
+        <section
+            class="stats-container"
+            id="statsSection">
+
+            <div class="stat-card">
+
+                <div class="stat-icon blue">
+                    📚
+                </div>
+
+                <div class="stat-details">
+
+                    <p>Total Projects</p>
+
+                    <h2 id="totalProjects">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+            <div class="stat-card">
+
+                <div class="stat-icon green">
+                    🏫
+                </div>
+
+                <div class="stat-details">
+
+                    <p>Departments</p>
+
+                    <h2 id="totalDepartments">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+            <div class="stat-card">
+
+                <div class="stat-icon orange">
+                    ⭐
+                </div>
+
+                <div class="stat-details">
+
+                    <p>My Favorites</p>
+
+                    <h2 id="totalFavorites">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+            <div class="stat-card">
+
+                <div class="stat-icon purple">
+                    🗂️
+                </div>
+
+                <div class="stat-details">
+
+                    <p>Categories</p>
+
+                    <h2 id="totalCategories">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             WELCOME BANNER
+        ====================================== -->
+
+        <section
+            class="welcome-banner"
+            id="welcomeBanner">
+
+            <div class="welcome-content">
+
+                <span class="welcome-label">
+                    ACADEMIC RESEARCH DISCOVERY
+                </span>
+
+                <h2>
+                    Find Research Projects<br>
+                    Faster and Easier.
+                </h2>
+
+                <p>
+                    Search academic project topics,
+                    explore research abstracts,
+                    and discover project ideas
+                    across different departments.
+                </p>
+
+                <button
+                    type="button"
+                    class="btn btn-light"
+                    id="startSearchingBtn">
+
+                    Start Searching →
+
+                </button>
+
+            </div>
+
+            <div
+                class="welcome-illustration"
+                aria-hidden="true">
+
+                🎓
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             DASHBOARD QUICK SEARCH
+        ====================================== -->
+
+        <section
+            class="content-section"
+            id="quickSearchSection">
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>Quick Project Search</h2>
+
+                    <p>
+                        Enter a research topic or keyword
+                        to find related projects.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <form
+                class="quick-search-box"
+                id="quickSearchForm">
+
+                <label
+                    class="sr-only"
+                    for="quickSearchInput">
+
+                    Search research projects
+
+                </label>
+
+                <input
+                    type="search"
+                    id="quickSearchInput"
+                    placeholder="Search by project title, keyword or author...">
+
+                <button
+                    type="submit"
+                    class="btn btn-primary">
+
+                    🔎 Search Projects
+
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- =====================================
+             DASHBOARD FEATURED PROJECTS
+        ====================================== -->
+
+        <section
+            class="content-section"
+            id="featuredSection">
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>Featured Research Projects</h2>
+
+                    <p>
+                        Explore selected academic
+                        research projects.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="btn btn-outline"
+                    id="viewAllProjectsBtn">
+
+                    View All →
+
+                </button>
+
+            </div>
+
+            <div
+                class="projects-grid"
+                id="featuredProjectsContainer">
+
+                <!-- Generated by JavaScript -->
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             BROWSE PROJECTS SECTION
+        ====================================== -->
+
+        <section
+            class="content-section"
+            id="projectsSection"
+            hidden>
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>Browse Research Projects</h2>
+
+                    <p>
+                        Search and filter available
+                        academic research projects.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- SEARCH AND FILTER -->
+
+            <div class="filter-bar">
+
+                <div class="search-box">
+
+                    <label
+                        class="sr-only"
+                        for="projectSearch">
+
+                        Search projects
+
+                    </label>
+
+                    <input
+                        type="search"
+                        id="projectSearch"
+                        placeholder="Search by title, author, keyword or abstract...">
+
+                </div>
+
+                <div class="filter-box">
+
+                    <label
+                        class="sr-only"
+                        for="departmentFilter">
+
+                        Filter by department
+
+                    </label>
+
+                    <select id="departmentFilter">
+
+                        <option value="all">
+                            All Departments
+                        </option>
+
+                        <option value="computer-science">
+                            Computer Science
+                        </option>
+
+                        <option value="business">
+                            Business Administration
+                        </option>
+
+                        <option value="accounting">
+                            Accounting
+                        </option>
+
+                        <option value="public-administration">
+                            Public Administration
+                        </option>
+
+                        <option value="statistics">
+                            Statistics
+                        </option>
+
+                        <option value="engineering">
+                            Engineering
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="filter-box">
+
+                    <label
+                        class="sr-only"
+                        for="categoryFilter">
+
+                        Filter by category
+
+                    </label>
+
+                    <select id="categoryFilter">
+
+                        <option value="all">
+                            All Categories
+                        </option>
+
+                        <option value="web-development">
+                            Web Development
+                        </option>
+
+                        <option value="database">
+                            Database Systems
+                        </option>
+
+                        <option value="artificial-intelligence">
+                            Artificial Intelligence
+                        </option>
+
+                        <option value="management">
+                            Management
+                        </option>
+
+                        <option value="finance">
+                            Finance
+                        </option>
+
+                        <option value="data-analysis">
+                            Data Analysis
+                        </option>
+
+                        <option value="other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <!-- SEARCH RESULTS COUNT -->
+
+            <div class="results-header">
+
+                <p id="searchResultsCount">
+                    Showing 0 projects
+                </p>
+
+                <label for="sortProjects">
+                    Sort by:
+                </label>
+
+                <select id="sortProjects">
+
+                    <option value="newest">
+                        Newest First
+                    </option>
+
+                    <option value="oldest">
+                        Oldest First
+                    </option>
+
+                    <option value="title">
+                        Project Title
+                    </option>
+
+                </select>
+
+            </div>
+
+            <!-- PROJECT CARDS -->
+
+            <div
+                class="projects-grid"
+                id="projectsContainer">
+
+                <!-- Generated by JavaScript -->
+
+            </div>
+
+            <!-- EMPTY STATE -->
+
+            <div
+                class="empty-state"
+                id="projectsEmpty"
+                hidden>
+
+                <div class="empty-icon">
+                    🔎
+                </div>
+
+                <h3>No Research Projects Found</h3>
+
+                <p>
+                    No projects match your search.
+                    Try another keyword or category.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             FAVORITES SECTION
+        ====================================== -->
+
+        <section
+            class="content-section"
+            id="favoritesSection"
+            hidden>
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>My Favorite Projects</h2>
+
+                    <p>
+                        Research projects you have
+                        saved for future reference.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div
+                class="projects-grid"
+                id="favoritesContainer">
+
+                <!-- Generated by JavaScript -->
+
+            </div>
+
+            <div
+                class="empty-state"
+                id="favoritesEmpty"
+                hidden>
+
+                <div class="empty-icon">
+                    ⭐
+                </div>
+
+                <h3>No Favorite Projects Yet</h3>
+
+                <p>
+                    Browse projects and click
+                    the favorite button to save
+                    projects here.
+                </p>
+
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    id="emptyBrowseBtn">
+
+                    Browse Projects
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             RECENT PROJECTS SECTION
+        ====================================== -->
+
+        <section
+            class="content-section"
+            id="recentSection"
+            hidden>
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>Recent Research Projects</h2>
+
+                    <p>
+                        Explore recently added
+                        research project records.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div
+                class="projects-grid"
+                id="recentProjectsContainer">
+
+                <!-- Generated by JavaScript -->
+
+            </div>
+
+            <div
+                class="empty-state"
+                id="recentEmpty"
+                hidden>
+
+                <div class="empty-icon">
+                    🕒
+                </div>
+
+                <h3>No Recent Projects</h3>
+
+                <p>
+                    Recently added projects
+                    will appear here.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             MANAGE PROJECTS SECTION
+        ====================================== -->
+
+        <section
+            class="content-section"
+            id="manageSection"
+            hidden>
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>Manage Research Projects</h2>
+
+                    <p>
+                        Add, update, and manage
+                        research project records.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    id="manageAddProjectBtn">
+
+                    + Add New Project
+
+                </button>
+
+            </div>
+
+            <div class="manage-card">
+
+                <div class="manage-icon">
+                    📚
+                </div>
+
+                <h3>Research Project Management</h3>
+
+                <p>
+                    Add new research projects,
+                    edit existing records,
+                    and remove outdated entries.
+                </p>
+
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    id="openProjectFormBtn">
+
+                    Add Research Project
+
+                </button>
+
+            </div>
+
+            <div class="section-header manage-list-heading">
+
+                <div>
+
+                    <h2>Project Records</h2>
+
+                    <p>
+                        Manage all available
+                        research project records.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div
+                class="manage-projects-list"
+                id="manageProjectsContainer">
+
+                <!-- Generated by JavaScript -->
+
+            </div>
+
+            <div class="info-notice">
+
+                <strong>
+                    ℹ️ Demonstration System
+                </strong>
+
+                <p>
+                    This version stores research project
+                    records in your browser using
+                    Local Storage. It does not have
+                    authenticated administrator access
+                    or a shared online database.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             FOOTER
+        ====================================== -->
+
+        <footer class="footer">
+
+            <p>
+                Developed by
+                <strong>
+                    Ibrahim Ugbede Abdulrazak
+                </strong>
+            </p>
+
+            <p>
+                Matric Number:
+                2025/HND/SWD/032
+            </p>
+
+            <p>
+                SWD 417 Assignment |
+                Student Research Project Search Engine System
+            </p>
+
+            <p>
+                &copy; 2026 ResearchFinder.
+                All Rights Reserved.
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <!-- =====================================
+         ADD / EDIT PROJECT MODAL
+    ====================================== -->
+
+    <div
+        class="modal-overlay"
+        id="projectModal"
+        hidden>
+
+        <div
+            class="modal modal-large"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="projectModalTitle">
+
+            <div class="modal-header">
+
+                <h2 id="projectModalTitle">
+                    Add Research Project
+                </h2>
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    id="closeProjectModal"
+                    aria-label="Close project form">
+
+                    &times;
+
+                </button>
+
+            </div>
+
+            <form id="projectForm">
+
+                <input
+                    type="hidden"
+                    id="projectId">
+
+                <!-- PROJECT TITLE -->
+
+                <div class="form-group">
+
+                    <label for="projectTitle">
+                        Project Title
+                    </label>
+
+                    <input
+                        type="text"
+                        id="projectTitle"
+                        placeholder="Enter research project title"
+                        maxlength="200"
+                        required>
+
+                </div>
+
+                <!-- PROJECT AUTHOR -->
+
+                <div class="form-group">
+
+                    <label for="projectAuthor">
+                        Student / Author Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="projectAuthor"
+                        placeholder="Enter project author"
+                        maxlength="100"
+                        required>
+
+                </div>
+
+                <!-- DEPARTMENT -->
+
+                <div class="form-group">
+
+                    <label for="projectDepartment">
+                        Department
+                    </label>
+
+                    <select
+                        id="projectDepartment"
+                        required>
+
+                        <option value="">
+                            Select Department
+                        </option>
+
+                        <option value="computer-science">
+                            Computer Science
+                        </option>
+
+                        <option value="business">
+                            Business Administration
+                        </option>
+
+                        <option value="accounting">
+                            Accounting
+                        </option>
+
+                        <option value="public-administration">
+                            Public Administration
+                        </option>
+
+                        <option value="statistics">
+                            Statistics
+                        </option>
+
+                        <option value="engineering">
+                            Engineering
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- CATEGORY -->
+
+                <div class="form-group">
+
+                    <label for="projectCategory">
+                        Research Category
+                    </label>
+
+                    <select
+                        id="projectCategory"
+                        required>
+
+                        <option value="">
+                            Select Category
+                        </option>
+
+                        <option value="web-development">
+                            Web Development
+                        </option>
+
+                        <option value="database">
+                            Database Systems
+                        </option>
+
+                        <option value="artificial-intelligence">
+                            Artificial Intelligence
+                        </option>
+
+                        <option value="management">
+                            Management
+                        </option>
+
+                        <option value="finance">
+                            Finance
+                        </option>
+
+                        <option value="data-analysis">
+                            Data Analysis
+                        </option>
+
+                        <option value="other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- PROJECT YEAR -->
+
+                <div class="form-group">
+
+                    <label for="projectYear">
+                        Project Year
+                    </label>
+
+                    <input
+                        type="number"
+                        id="projectYear"
+                        min="2000"
+                        max="2100"
+                        placeholder="e.g. 2026"
+                        required>
+
+                </div>
+
+                <!-- PROJECT KEYWORDS -->
+
+                <div class="form-group">
+
+                    <label for="projectKeywords">
+                        Keywords
+                    </label>
+
+                    <input
+                        type="text"
+                        id="projectKeywords"
+                        placeholder="e.g. database, web application, students"
+                        maxlength="250"
+                        required>
+
+                </div>
+
+                <!-- PROJECT ABSTRACT -->
+
+                <div class="form-group">
+
+                    <label for="projectAbstract">
+                        Project Abstract
+                    </label>
+
+                    <textarea
+                        id="projectAbstract"
+                        rows="6"
+                        maxlength="3000"
+                        placeholder="Enter a short research project abstract..."
+                        required></textarea>
+
+                </div>
+
+                <!-- MODAL BUTTONS -->
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        class="btn btn-outline"
+                        id="cancelProjectBtn">
+
+                        Cancel
+
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary">
+
+                        Save Project
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================
+         PROJECT DETAILS MODAL
+    ====================================== -->
+
+    <div
+        class="modal-overlay"
+        id="detailsModal"
+        hidden>
+
+        <div
+            class="modal modal-large"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="detailsModalTitle">
+
+            <div class="modal-header">
+
+                <h2 id="detailsModalTitle">
+                    Research Project Details
+                </h2>
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    id="closeDetailsModal"
+                    aria-label="Close project details">
+
+                    &times;
+
+                </button>
+
+            </div>
+
+            <div id="projectDetailsContent">
+
+                <!-- Generated by JavaScript -->
+
+            </div>
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="btn btn-outline"
+                    id="closeDetailsBtn">
+
+                    Close
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================
+         JAVASCRIPT
+    ====================================== -->
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
